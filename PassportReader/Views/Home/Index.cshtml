@@ -1,0 +1,30 @@
+﻿@model IList<PassportReader.Services.MrzData>
+
+<h2>Pasaport Bilgileri</h2>
+
+@if (Model != null)
+{
+    @foreach (var data in Model)
+    {
+        <div class="card mt-5">
+            <div class="card-body">
+                <label>Ülke: </label><span class="ml-2">@data.country</span><br />
+                <label>Pasaport Numarası: </label><span class="ml-2">@data.number</span><br />
+                <label>Doğum Tarihi: </label><span class="ml-2">@data.date_of_birth</span><br />
+                <label>Geçerlilik Tarihi: </label><span class="ml-2">@data.expiration_date</span><br />
+                <label>Milliyet: </label><span class="ml-2">@data.nationality</span><br />
+                <label>Cinsiyet: </label><span class="ml-2">@data.sex</span><br />
+                <label>İsimler: </label><span class="ml-2">@data.names</span><br />
+                <label>Soyisim: </label><span class="ml-2">@data.surname</span><br />
+                <label>TC Kimlik: </label><span class="ml-2">@data.personal_number</span><br />
+            </div>
+            
+        </div>
+    }
+
+    
+}
+else
+{
+    <p>MRZ verisi bulunamadı.</p>
+}
